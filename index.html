@@ -4,9 +4,39 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Room Makers Web</title>
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000000;
+      }
+      #unity-container {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      }
+      #background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('Marco.png');
+        background-size: 912px 706px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 0;
+      }
+    </style>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=640 height=576 style="width: 640px; height: 576px; background: #231F20"></canvas>
+  <body style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 0; border: 0; margin: 0;">
+    <div id="background-container"></div>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=640 height=576 style="width: 640px; height: 576px; background: #231F20"></canvas>
+    </div>
     <script src="Build/GBJAM11.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
